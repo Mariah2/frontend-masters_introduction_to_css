@@ -1,0 +1,296 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* generic styles for the page */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+img{
+    width: 100%;
+  }
+
+a {
+    color: var(--magenta);
+}
+
+a:hover {
+    color: var(--hotmag);
+    text-decoration: none;
+}
+
+.gradient {
+    background: rgb(255, 23, 228);
+    background: linear-gradient(90deg, rgba(255, 23, 228, 1) 0%, rgba(134, 251, 251, 1) 100%);
+    height: 2px;
+}
+
+/* navbar css */
+
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 2rem 1rem;
+}
+
+nav h1 a {
+    font-family: var(--sans);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav .fa-brands {
+    color: var(--aqua);
+    font-size: 150%;
+}
+
+nav .fa-solid {
+    color: var(--aqua);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+.button {
+    background-color: var(--magenta);
+    padding: 0.5rem;
+    border-radius: 4px;
+    color: var(--white);
+    font-family: var(--mono);
+    text-decoration: none;
+}
+
+.button:hover {
+    color: var(--white);
+    background-color: var(--hotmag);
+}
+
+/* intro css */
+
+#intro {
+    padding: 4rem 1rem 7rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#intro .name {
+    font-family: var(--mono);
+}
+
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--aqua);
+    display: block;
+}
+
+#intro h2 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+/*projects*/
+.projects {
+    background-color: var(--dkblue);
+    padding: 4rem 1rem;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    padding-bottom: calc(1.5 * 2.5rem);
+}
+
+.projects h3 {
+    color: var(--aqua);
+}
+
+.projects h4 {
+    font-size: 1rem;
+    font-family: var(--mono);
+    margin: 0;
+}
+
+.blackbox {
+    background-color: var(--black);
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+.projects img {
+    border-style: solid none none solid;
+    border-radius: 25px;
+    border-color: white;
+    border-width: 2px;
+    padding: 1rem;
+    margin: 2rem 0 4rem 0;
+}
+
+@media (min-width: 550px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+
+    .projects img {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+
+    .text {
+        order: 2;
+        text-align: right;
+        grid-column: 5/11;
+        grid-row: 1/2;
+    }
+
+    .projects .reverse .text {
+        text-align: left;
+        grid-column: 1/7;
+        order: 2;
+        grid-row: 1/2;
+    }
+
+    .projects .reverse img {
+        grid-column: 6/11;
+        grid-row: 1/2;
+    }
+
+    .projects ul {
+        justify-content: flex-end;
+    }
+
+    .projects .ul-reverse {
+        justify-content: flex-start;
+    }
+}
+
+/*contact css*/
+
+#contact {
+    background-color: var(--plum);
+    text-align: center;
+    padding: 3rem 10rem;
+    font-family: var(--mono);
+}
+
+#contact p {
+    font-family: var(--sans);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*footer css*/
+
+footer {
+    text-align: center;
+    font-family: var(--sans);
+    padding: 4rem 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+footer h2 {
+    padding-bottom: 2rem;
+}
+
+@media (min-width: 850px) {
+    footer {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
